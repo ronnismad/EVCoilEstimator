@@ -50,6 +50,15 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
     else:
         Mutual_Inductance = float('nan')
 
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://i.ibb.co/Fz12nN3/n2ni70f8k0q31.png");
+    }
+   </style>
+    """,
+    unsafe_allow_html=True
 
 
 
@@ -61,7 +70,6 @@ def main():
     st.write('https://physics.itmo.ru/en/personality/sutanu_chatterjee')
     st.write("This estimator utilises fitted curves of previously performed FEM simulation results and the application is programmed to solves quadratic and cubic polynomial functions in a real-time mode in order to estimate coil parameter values instantly, based on two major variables that are of much importance to WPT systems: Air Gap between the coils and Number of Turns of the individual coils.")
 
-
     st.markdown("<h2 style='font-size: 28px;'>PLEASE SELECT THE VALUES</h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='font-size: 18px;'>AIR GAP (mm)</h2>", unsafe_allow_html=True)
     #Air_Gap = st.number_input("Air Gap (mm):", min_value=10, max_value=510, value=160, step=1)
@@ -71,17 +79,6 @@ def main():
     No_of_Turns = st.slider("Select a value for the Number of Turns ", min_value=5, max_value=60, value=10, step=1)
     st.markdown("<h2 style='font-size: 18px;'>ALU-METAL SHIELDING (mm)</h2>", unsafe_allow_html=True)
     Metal_Shield=st.slider("Select a value for the thickness of Aluminium Metal shield in mm", min_value=0, max_value=5, value=2, step=1)
-
-    st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background: url("https://i.ibb.co/Fz12nN3/n2ni70f8k0q31.png");
-    }
-   </style>
-    """,
-    unsafe_allow_html=True
-
 
     if st.button("ESTIMATE"):
         calculate_values(Air_Gap, No_of_Turns, Metal_Shield)
