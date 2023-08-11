@@ -1,4 +1,5 @@
 import streamlit as st
+import base64
 
 st.set_page_config(
     page_title="EV Coil Parameter Estimator",
@@ -8,19 +9,28 @@ st.set_page_config(
     
 )
 
-def set_background_image_style(image_path):
-    page_bg_img = '''
-        <style>
-        .stApp {
-            background-image: url("''' + image_path + '''");
-            background-size: cover;
-        }
-        </style>
-        '''
-    st.markdown(page_bg_img, unsafe_allow_html=True)
 
-background_image_path = 'https://downloader.disk.yandex.ru/preview/11d0d6307279eb8ef446497143d275685135bcb5166fb3ecc6d512abf4639049/64d1c174/1L0he7MsEFh38EXJ_ceGPk1X_5G62diwSUQQopnECSqy6PZ_sKx3ZgYLL9E_zRmLtpGHHz16DiJRR8TPKk5Fhw%3D%3D?uid=0&filename=itmowptev-2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048'
-set_background_image_style(background_image_path)
+@st.cache(allow_output_mutation=True)
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+def set_png_as_page_bg(png_file):
+    bin_str = get_base64_of_bin_file(png_file)
+    page_bg_img = '''
+    <style>
+    body {
+    background-image: url("https://downloader.disk.yandex.ru/preview/11d0d6307279eb8ef446497143d275685135bcb5166fb3ecc6d512abf4639049/64d1c174/1L0he7MsEFh38EXJ_ceGPk1X_5G62diwSUQQopnECSqy6PZ_sKx3ZgYLL9E_zRmLtpGHHz16DiJRR8TPKk5Fhw%3D%3D?uid=0&filename=itmowptev-2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048;base64,%s");
+    background-size: cover;
+    }
+    </style>
+    ''' % bin_str
+    
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+    return
+
+set_png_as_page_bg('background.png')
 
 
 
