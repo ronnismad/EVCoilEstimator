@@ -61,7 +61,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
         Mutual_Inductance = float('nan')
 
 def main():
-    set_background('./assets/background.png')
+    set_background('assets/background.png')
     st.markdown("<h2 style='font-size: 34px;'>EV Wireless Charging | Coil Parameter Estimator</h2>", unsafe_allow_html=True)
     st.write('Conforms to the SAE J2953_202010 Standard (https://www.sae.org/standards/content/j2954_202010/)')
     st.markdown("<h2 style='font-size: 16px;'>developed by S.Chatterjee | School of Physics and Engineering | ITMO University </h2>", unsafe_allow_html=True)
