@@ -13,7 +13,7 @@ def set_background(png_url):
         f"""
         <style>
             .reportview-container {{
-                background: url('{png_url}') no-repeat center center fixed;
+                background: url('https://evcoilestimator.streamlit.app') no-repeat center center fixed;
                 background-size: cover;
             }}
         </style>
