@@ -61,7 +61,7 @@ def main():
     """
     <style>
     .reportview-container {
-        background: url("https://downloader.disk.yandex.ru/preview/37a84325347c3d02c19bd2e363c6dd7cd2e413901bd85f8c85f65c55d3257c6a/64d5bc01/1L0he7MsEFh38EXJ_ceGPk1X_5G62diwSUQQopnECSqy6PZ_sKx3ZgYLL9E_zRmLtpGHHz16DiJRR8TPKk5Fhw%3D%3D?uid=0&filename=itmowptev-2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048");
+        background: url("https://i.ibb.co/Fz12nN3/n2ni70f8k0q31.png");
     }
    </style>
     """,
