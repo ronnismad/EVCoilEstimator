@@ -12,7 +12,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
     if Air_Gap >= 5 and Air_Gap <= 510:
         K = -8.544e-09 * Air_Gap ** 3 + 1.027e-05 * Air_Gap ** 2 - 0.004308 * Air_Gap + 0.6630
         K_round= round(K, 4)
-        st.markdown("<h2 style='font-size: 26px;'>ESTIMATION COMPLETE</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 26px, color=green;'>ESTIMATION COMPLETE</h2>", unsafe_allow_html=True)
         st.write("Here are the estimated values:")
        
 
@@ -53,7 +53,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
 
 def main():
    
-    st.markdown('<link href="styles.css" rel="stylesheet">', unsafe_allow_html=True)
+    
     
     st.markdown("<h2 style='font-size: 34px;'>EV Wireless Charging | Coil Parameter Estimator</h2>", unsafe_allow_html=True)
     st.write('Conforms to the SAE J2953_202010 Standard (https://www.sae.org/standards/content/j2954_202010/)')
