@@ -1,6 +1,17 @@
 
 import streamlit as st
 
+def set_background(png_filename):
+    page_bg = '''
+    <style>
+    body {
+        background-image: url("''' + png_filename + '''");
+        background-size: cover;
+    }
+    </style>
+    '''
+    st.markdown(page_bg, unsafe_allow_html=True)
+
 st.set_page_config(
     page_title="EV Coil Parameter Estimator",
     page_icon=":car:",
@@ -8,28 +19,12 @@ st.set_page_config(
     initial_sidebar_state="auto",  
 )
 
-def set_background(png_url):
-    st.markdown(
-        f"""
-        <style>
-            .reportview-container {{
-                background: url('https://i.ibb.co/dQFKmD0/background.png') no-repeat center center fixed;
-                background-size: cover;
-            }}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
 def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
     if Air_Gap >= 5 and Air_Gap <= 510:
         K = -8.544e-09 * Air_Gap ** 3 + 1.027e-05 * Air_Gap ** 2 - 0.004308 * Air_Gap + 0.6630
         K_round= round(K, 4)
         st.markdown("<h2 style='font-size: 26px;color:green;'>ESTIMATION COMPLETE</h2>", unsafe_allow_html=True)
         st.write("Here are the estimated values:")
-       
-
-
         st.write("Coefficient of Magnetic Coupling:", K_round, '(dimensionsless)')
     else:
         K = float('nan')
@@ -65,9 +60,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
         Mutual_Inductance = float('nan')
 
 def main():
-   
-    set_background('https://i.ibb.co/dQFKmD0/background.png')
-    
+    set_background('background.png')
     st.markdown("<h2 style='font-size: 34px;'>EV Wireless Charging | Coil Parameter Estimator</h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='font-size: 16px;'>developed by S.Chatterjee | School of Physics and Engineering | ITMO University </h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='font-size: 18px;color:yellow;'>Conforms to the SAE J2953_202010 Standard</h2>", unsafe_allow_html=True)
