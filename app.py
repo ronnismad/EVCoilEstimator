@@ -5,8 +5,6 @@ st.set_page_config(
     page_icon=":car:",
     layout="centered",  
     initial_sidebar_state="auto",  
-    
-    
 )
 
 def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
@@ -57,16 +55,6 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
 
 def main():
 
-    st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background: url("https://i.ibb.co/Fz12nN3/n2ni70f8k0q31.png");
-    }
-   </style>
-    """,
-    unsafe_allow_html=True
-    
     st.markdown("<h2 style='font-size: 34px;'>EV Wireless Charging | Coil Parameter Estimator</h2>", unsafe_allow_html=True)
     st.write('Conforms to the SAE J2953_202010 Standard (https://www.sae.org/standards/content/j2954_202010/)')
     st.markdown("<h2 style='font-size: 16px;'>developed by S.Chatterjee | School of Physics and Engineering | ITMO University </h2>", unsafe_allow_html=True)
@@ -83,6 +71,16 @@ def main():
     No_of_Turns = st.slider("Select a value for the Number of Turns ", min_value=5, max_value=60, value=10, step=1)
     st.markdown("<h2 style='font-size: 18px;'>ALU-METAL SHIELDING (mm)</h2>", unsafe_allow_html=True)
     Metal_Shield=st.slider("Select a value for the thickness of Aluminium Metal shield in mm", min_value=0, max_value=5, value=2, step=1)
+
+    st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://i.ibb.co/Fz12nN3/n2ni70f8k0q31.png");
+    }
+   </style>
+    """,
+    unsafe_allow_html=True
 
 
     if st.button("ESTIMATE"):
