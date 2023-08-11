@@ -6,16 +6,7 @@ st.set_page_config(
     layout="centered",  
     initial_sidebar_state="auto",  
 )
-def set_background(background_image):
-    page_bg = """
-    <style>
-    body {
-        background-image: url('"""+ background_image +"""');
-        background-size: cover;
-    }
-    </style>
-    """
-    st.markdown(page_bg, unsafe_allow_html=True)
+
     
 def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
     if Air_Gap >= 5 and Air_Gap <= 510:
@@ -61,7 +52,11 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
         Mutual_Inductance = float('nan')
 
 def main():
-    set_background('assets/background.png')
+    def main():
+    # Link to the external CSS file
+    st.markdown('<link href="styles.css" rel="stylesheet">', unsafe_allow_html=True)
+    
+    
     st.markdown("<h2 style='font-size: 34px;'>EV Wireless Charging | Coil Parameter Estimator</h2>", unsafe_allow_html=True)
     st.write('Conforms to the SAE J2953_202010 Standard (https://www.sae.org/standards/content/j2954_202010/)')
     st.markdown("<h2 style='font-size: 16px;'>developed by S.Chatterjee | School of Physics and Engineering | ITMO University </h2>", unsafe_allow_html=True)
