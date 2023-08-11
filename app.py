@@ -67,7 +67,15 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
 
 def main():
 
-
+    st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://downloader.disk.yandex.ru/preview/37a84325347c3d02c19bd2e363c6dd7cd2e413901bd85f8c85f65c55d3257c6a/64d5bc01/1L0he7MsEFh38EXJ_ceGPk1X_5G62diwSUQQopnECSqy6PZ_sKx3ZgYLL9E_zRmLtpGHHz16DiJRR8TPKk5Fhw%3D%3D?uid=0&filename=itmowptev-2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048");
+    }
+   </style>
+    """,
+    unsafe_allow_html=True
     
     st.markdown("<h2 style='font-size: 34px;'>EV Wireless Charging | Coil Parameter Estimator</h2>", unsafe_allow_html=True)
     st.write('Conforms to the SAE J2953_202010 Standard (https://www.sae.org/standards/content/j2954_202010/)')
