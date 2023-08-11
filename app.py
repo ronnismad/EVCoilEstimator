@@ -6,7 +6,17 @@ st.set_page_config(
     layout="centered",  
     initial_sidebar_state="auto",  
 )
-
+def set_background(background_image):
+    page_bg = """
+    <style>
+    body {
+        background-image: url('"""+ background_image +"""');
+        background-size: cover;
+    }
+    </style>
+    """
+    st.markdown(page_bg, unsafe_allow_html=True)
+    
 def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
     if Air_Gap >= 5 and Air_Gap <= 510:
         K = -8.544e-09 * Air_Gap ** 3 + 1.027e-05 * Air_Gap ** 2 - 0.004308 * Air_Gap + 0.6630
@@ -51,7 +61,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
         Mutual_Inductance = float('nan')
 
 def main():
-
+    set_background('assets/background.jpg')
     st.markdown("<h2 style='font-size: 34px;'>EV Wireless Charging | Coil Parameter Estimator</h2>", unsafe_allow_html=True)
     st.write('Conforms to the SAE J2953_202010 Standard (https://www.sae.org/standards/content/j2954_202010/)')
     st.markdown("<h2 style='font-size: 16px;'>developed by S.Chatterjee | School of Physics and Engineering | ITMO University </h2>", unsafe_allow_html=True)
@@ -67,6 +77,8 @@ def main():
     No_of_Turns = st.slider("Select a value for the Number of Turns ", min_value=5, max_value=60, value=10, step=1)
     st.markdown("<h2 style='font-size: 18px;'>ALU-METAL SHIELDING (mm)</h2>", unsafe_allow_html=True)
     Metal_Shield=st.slider("Select a value for the thickness of Aluminium Metal shield in mm", min_value=0, max_value=5, value=2, step=1)
+
+    
 
     if st.button("ESTIMATE"):
         calculate_values(Air_Gap, No_of_Turns, Metal_Shield)
