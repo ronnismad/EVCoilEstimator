@@ -12,7 +12,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
     if Air_Gap >= 5 and Air_Gap <= 510:
         K = -8.544e-09 * Air_Gap ** 3 + 1.027e-05 * Air_Gap ** 2 - 0.004308 * Air_Gap + 0.6630
         K_round= round(K, 4)
-        st.markdown("<h2 style='font-size: 26px, color='green';'>ESTIMATION COMPLETE</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 26px;color:green;'>ESTIMATION COMPLETE</h2>", unsafe_allow_html=True)
         st.write("Here are the estimated values:")
        
 
