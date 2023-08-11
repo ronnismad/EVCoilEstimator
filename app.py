@@ -1,3 +1,4 @@
+import base64
 import streamlit as st
 
 st.set_page_config(
@@ -7,6 +8,26 @@ st.set_page_config(
     initial_sidebar_state="auto",  
 )
 
+def get_img_as_base64(file):
+    with open(file, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+
+img = get_img_as_base64("image.jpg")
+
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-image: url("https://images.unsplash.com/photo-1501426026826-31c667bdf23d");
+background-size: 180%;
+background-position: top left;
+background-repeat: no-repeat;
+background-attachment: local;
+}}
+"""
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
     
 def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
     if Air_Gap >= 5 and Air_Gap <= 510:
