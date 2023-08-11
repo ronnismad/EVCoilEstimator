@@ -52,7 +52,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
 def main():
     st.image('header.png')
     #st.markdown("<h2 style='font-size: 34px;'>EV Wireless Charging | Coil Parameter Estimator</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-size: 16px;'>developed by S.Chatterjee | School of Physics and Engineering | ITMO University </h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-size: 10px;'>developed by S.Chatterjee | School of Physics and Engineering | ITMO University </h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='font-size: 18px;color:yellow;'>Conforms to the SAE J2953_202010 Standard</h2>", unsafe_allow_html=True)
     st.write("This estimator utilises fitted curves of previously performed FEM simulation results and the application is programmed to solves quadratic and cubic polynomial functions in a real-time mode in order to estimate coil parameter values instantly, based on two major variables that are of much importance to WPT systems: Air Gap between the coils and Number of Turns of the individual coils.")
 
