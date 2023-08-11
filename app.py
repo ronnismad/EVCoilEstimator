@@ -8,6 +8,19 @@ st.set_page_config(
     initial_sidebar_state="auto",  
 )
 
+def set_background(png_url):
+    st.markdown(
+        f"""
+        <style>
+            .reportview-container {{
+                background: url('{png_url}') no-repeat center center fixed;
+                background-size: cover;
+            }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
     if Air_Gap >= 5 and Air_Gap <= 510:
         K = -8.544e-09 * Air_Gap ** 3 + 1.027e-05 * Air_Gap ** 2 - 0.004308 * Air_Gap + 0.6630
@@ -53,7 +66,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
 
 def main():
    
-    
+    set_background('https://i.ibb.co/dQFKmD0/background.png')
     
     st.markdown("<h2 style='font-size: 34px;'>EV Wireless Charging | Coil Parameter Estimator</h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='font-size: 16px;'>developed by S.Chatterjee | School of Physics and Engineering | ITMO University </h2>", unsafe_allow_html=True)
