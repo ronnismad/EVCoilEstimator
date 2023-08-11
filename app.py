@@ -1,5 +1,4 @@
 import streamlit as st
-import base64
 
 st.set_page_config(
     page_title="EV Coil Parameter Estimator",
@@ -9,27 +8,16 @@ st.set_page_config(
     
     
 )
-def get_base64(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-    
-def set_png_as_page_bg(png_file):
-    bin_str = get_base64_of_bin_file2(png_file) 
-    page_bg_img = '''
+st.markdown(
+    """
     <style>
-    .stApp {
-    background-image: url("data:image/png;base64,%s");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: scroll; # doesn't work
+    .reportview-container {
+        background: url("https://downloader.disk.yandex.ru/preview/37a84325347c3d02c19bd2e363c6dd7cd2e413901bd85f8c85f65c55d3257c6a/64d5bc01/1L0he7MsEFh38EXJ_ceGPk1X_5G62diwSUQQopnECSqy6PZ_sKx3ZgYLL9E_zRmLtpGHHz16DiJRR8TPKk5Fhw%3D%3D?uid=0&filename=itmowptev-2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048");
     }
-    </style>
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-    return
-
-set_background('./background.png')
+   </style>
+    """,
+    unsafe_allow_html=True
+)
 
 def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
     if Air_Gap >= 5 and Air_Gap <= 510:
