@@ -1,1 +1,2 @@
 # EVCoilEstimator
+This estimator utilises fitted curves of previously performed FEM simulation results and the application is programmed to solves quadratic and cubic polynomial functions in a real-time mode in order to estimate coil parameter values instantly, based on two major variables that are of much importance to WPT systems: Air Gap between the coils and Number of Turns of the individual coils.
