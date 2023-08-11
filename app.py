@@ -7,6 +7,7 @@ st.set_page_config(
     layout="centered",  
     initial_sidebar_state="auto",  
     
+    
 )
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
@@ -24,7 +25,6 @@ def set_background(png_file):
     </style>
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
-
     set_background('./background.png')
 
 def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
