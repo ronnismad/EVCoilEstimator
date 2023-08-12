@@ -44,7 +44,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
 
         st.write("\n Q Factor:", Q_round, '(dimensionsless)')
         st.write("Efficiency (RF-RF)", Efficiency_round,'%')
-        st.write("RDC:", R_round, 'mOhms')
+        st.write("DC Resistance:", R_round, 'mOhms')
         st.write("(These estimated results are based on simulated results obtained by S. Chatterjee under the mentorship and supervision of Prof. Polina Kapitanova)")
     else:
         Mutual_Inductance = float('nan')
