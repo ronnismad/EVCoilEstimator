@@ -59,16 +59,16 @@ def main():
 
     st.markdown("<h2 style='font-size: 28px;'>PLEASE SELECT THE VALUES</h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='font-size: 20px;'>AIR GAP (mm)</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-size: 18px;'>Air Gap refers to the physical distance between two inductors and in a system of coupled coils, we consider it as the physical distance in air between the two coils, typically measured in millimeters. The coupling coefficient (k) of the system of coupled coils directly depends on this variable.</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-size: 16px;'>Air Gap refers to the physical distance between two inductors and in a system of coupled coils, we consider it as the physical distance in air between the two coils, typically measured in millimeters. The coupling coefficient (k) of the system of coupled coils directly depends on this variable.</h2>", unsafe_allow_html=True)
     #Air_Gap = st.number_input("Air Gap (mm):", min_value=10, max_value=510, value=160, step=1)
     Air_Gap = st.slider("Select a value for Air Gap in mm", min_value=10, max_value=510, value=160, step=1)
     st.markdown("<h2 style='font-size: 20px;'>NUMBER OF TURNS (no.)</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-size: 18px;'>Number of Turns refers to the winding number of an electrical conductor which is composed of an inductor or a coil. This is an adjustable variable and coil parameters such as Inductance, Resistance, Mutual Inductance, Q Factor etc. depend on it.</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-size: 16px;'>Number of Turns refers to the winding number of an electrical conductor which is composed of an inductor or a coil. This is an adjustable variable and coil parameters such as Inductance, Resistance, Mutual Inductance, Q Factor etc. depend on it.</h2>", unsafe_allow_html=True)
 
     #No_of_Turns = st.number_input("No. of Turns:", min_value=5, max_value=60, value=10, step=1)
     No_of_Turns = st.slider("Select a value for the Number of Turns ", min_value=5, max_value=60, value=10, step=1)
-    st.markdown("<h2 style='font-size: 18px;'>ALU-METAL SHIELDING (mm)</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-size: 18px;'>. When high-frequency current flows through transmitting coil, the alternating magnetic field is excited and eddy currents are induced in aluminum plate. The partial energy is lost in the form of eddy current. However, eddy currents in the aluminum plate can also produce the corresponding induction electromagnetic field which influences the original electromagnetic field, which leads to variations of coil parameters, leading to changes of WPT system working condition.</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-size: 20px;'>ALU-METAL SHIELDING (mm)</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-size: 16px;'>Eddy currents are induced in aluminum plate during the transmission of energy from the TX coil in from of an alternating magnetic field. The partial energy is lost in the form of eddy current. However, eddy currents in the aluminum plate can also produce the corresponding inductive electromagnetic field which influences the original electromagnetic field, which leads to variations of coil parameters, leading to changes of WPT system working condition.</h2>", unsafe_allow_html=True)
     Metal_Shield=st.slider("Select a value for the thickness of Aluminium Metal shield in mm", min_value=0, max_value=5, value=2, step=1)
 
     
