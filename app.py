@@ -23,9 +23,9 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
         Mutual_Inductance = 0.07774 * No_of_Turns ** 2 + 2.497 * No_of_Turns - 16.51
         Mutual_Inductance_round = round(Mutual_Inductance,2)
 
-        TX_L1 = 0.697 * No_of_Turns ** 2 + 2.745 * No_of_Turns - 18.16 - Metal_Shield ** 2 * 0.39112
+        TX_L1 = 0.697 * No_of_Turns ** 2 + 2.745 * No_of_Turns - 18.16 - Metal_Shield ** 2 * 0.49112
         TX_L1_round = round(TX_L1,2)
-        RX_L2 = 0.5677 * No_of_Turns ** 2 + 5.371 * No_of_Turns - 35.5 - Metal_Shield ** 2 * 0.39112
+        RX_L2 = 0.5677 * No_of_Turns ** 2 + 5.371 * No_of_Turns - 35.5 - Metal_Shield ** 2 * 0.49112
         RX_L2_round = round(RX_L2,2)
         L_avg = (TX_L1 + RX_L2) / 2
         L_avg_round = round(L_avg,2)
