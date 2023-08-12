@@ -35,7 +35,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
         st.write("Geometric Mean of Inductances", L_avg_round, 'uH')
         st.write("Mutual Inductance:", Mutual_Inductance_round, 'uH')
 
-        R = (41.9 / 9.5) * No_of_Turns
+        R = (45.9 / 9.5) * No_of_Turns
         R_round = round(R,2)
         Q = (2 * 3.14159 * 85 * L_avg) / R
         Q_round = round(Q)
