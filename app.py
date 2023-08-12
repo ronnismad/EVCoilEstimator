@@ -43,7 +43,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
         Efficiency_round = round(Efficiency,2)
 
         st.write("\n Q Factor:", Q_round, '(dimensionsless)')
-        st.write("Efficiency (RF-RF)", Efficiency_round,'%')
+        st.write("Wireless Power Transmission Efficiency (RF-RF/AC-AC)", Efficiency_round,'%')
         st.write("DC Resistance:", R_round, 'mOhms')
         st.write("(These estimated results are based on simulated results obtained by S. Chatterjee under the mentorship and supervision of Prof. Polina Kapitanova)")
     else:
@@ -59,7 +59,7 @@ def main():
 
     st.markdown("<h2 style='font-size: 28px;'>PLEASE SELECT THE VALUES</h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='font-size: 20px;'>AIR GAP (mm)</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-size: 18px;'>Air Gap refers to the physical distance between two inductors [4] and in a system of coupled coils, we consider it as the physical distance in air between the two coils, typically measured in millimeters. The coupling coefficient (k) of the system of coupled coils directly depends on this variable.</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-size: 18px;'>Air Gap refers to the physical distance between two inductors and in a system of coupled coils, we consider it as the physical distance in air between the two coils, typically measured in millimeters. The coupling coefficient (k) of the system of coupled coils directly depends on this variable.</h2>", unsafe_allow_html=True)
     #Air_Gap = st.number_input("Air Gap (mm):", min_value=10, max_value=510, value=160, step=1)
     Air_Gap = st.slider("Select a value for Air Gap in mm", min_value=10, max_value=510, value=160, step=1)
     st.markdown("<h2 style='font-size: 20px;'>NUMBER OF TURNS (no.)</h2>", unsafe_allow_html=True)
