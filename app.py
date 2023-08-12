@@ -35,7 +35,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
         st.write("Geometric Mean of Inductances", L_avg_round, 'uH')
         st.write("Mutual Inductance:", Mutual_Inductance_round, 'uH')
 
-        R = (45.9 / 9.5) * No_of_Turns
+        R = (45.9 / 9.5) * No_of_Turns**1.5
         R_round = round(R,2)
         Q = (2 * 3.14159 * 85 * L_avg) / R
         Q_round = round(Q)
@@ -69,7 +69,7 @@ def main():
     No_of_Turns = st.slider("Select a value for the Number of Turns ", min_value=7, max_value=25, value=10, step=1)
     st.markdown("<h2 style='font-size: 20px;'>ALU-METAL SHIELDING (mm)</h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='font-size: 16px;'>Eddy currents are induced in aluminum plate during the transmission of energy from the TX coil in from of an alternating magnetic field. The partial energy is lost in the form of eddy current. However, eddy currents in the aluminum plate can also produce the corresponding inductive electromagnetic field which influences the original electromagnetic field, which leads to variations of coil parameters, leading to changes of WPT system working condition.</h2>", unsafe_allow_html=True)
-    Metal_Shield=st.slider("Select a value for the thickness of Aluminium Metal shield in mm", min_value=0, max_value=5, value=2, step=1)
+    Metal_Shield=st.slider("Select a value for the thickness of Aluminium Metal shield in mm", min_value=0, max_value=5, value=0, step=1)
 
     
 
