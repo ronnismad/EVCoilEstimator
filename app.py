@@ -68,6 +68,7 @@ def main():
     #No_of_Turns = st.number_input("No. of Turns:", min_value=5, max_value=60, value=10, step=1)
     No_of_Turns = st.slider("Select a value for the Number of Turns ", min_value=5, max_value=60, value=10, step=1)
     st.markdown("<h2 style='font-size: 18px;'>ALU-METAL SHIELDING (mm)</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-size: 18px;'>. When high-frequency current flows through transmitting coil, the alternating magnetic field is excited and eddy currents are induced in aluminum plate. The partial energy is lost in the form of eddy current. However, eddy currents in the aluminum plate can also produce the corresponding induction electromagnetic field which influences the original electromagnetic field, which leads to variations of coil parameters, leading to changes of WPT system working condition.</h2>", unsafe_allow_html=True)
     Metal_Shield=st.slider("Select a value for the thickness of Aluminium Metal shield in mm", min_value=0, max_value=5, value=2, step=1)
 
     
