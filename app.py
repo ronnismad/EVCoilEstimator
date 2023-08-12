@@ -59,6 +59,7 @@ def main():
 
     st.markdown("<h2 style='font-size: 28px;'>PLEASE SELECT THE VALUES</h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='font-size: 18px;'>AIR GAP (mm)</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='font-size: 12px;'>Air Gap - Air Gap refers to the physical distance between two inductors [4] and in a system of coupled coils, we consider it as the physical distance in air between the two coils, typically measured in millimeters. The coupling coefficient (k) of the system of coupled coils directly depends on this variable.</h2>", unsafe_allow_html=True)
     #Air_Gap = st.number_input("Air Gap (mm):", min_value=10, max_value=510, value=160, step=1)
     Air_Gap = st.slider("Select a value for Air Gap in mm", min_value=10, max_value=510, value=160, step=1)
     st.markdown("<h2 style='font-size: 18px;'>NUMBER OF TURNS (no.)</h2>", unsafe_allow_html=True)
