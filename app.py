@@ -46,6 +46,7 @@ def calculate_values(Air_Gap, No_of_Turns, Metal_Shield):
         st.write("Wireless Power Transmission Efficiency (RF-RF/AC-AC)", Efficiency_round,'%')
         st.write("DC Resistance:", R_round, 'mOhms')
         st.write("(These estimated results are based on simulated results obtained by S. Chatterjee under the mentorship and supervision of Prof. Polina Kapitanova)")
+        st.image('interface.png')
     else:
         Mutual_Inductance = float('nan')
 
